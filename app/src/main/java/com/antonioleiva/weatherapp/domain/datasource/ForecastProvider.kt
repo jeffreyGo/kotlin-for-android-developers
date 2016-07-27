@@ -24,8 +24,10 @@ import com.antonioleiva.weatherapp.extensions.firstResult
 
 class ForecastProvider(val sources: List<ForecastDataSource> = ForecastProvider.SOURCES) {
 
+    // java의 Static과 같은 의미로 사용
     companion object {
         val DAY_IN_MILLIS = 1000 * 60 * 60 * 24
+        // lazy는 사용시 초기화되는 지연초기화를 정의
         val SOURCES by lazy { listOf(ForecastDb(), ForecastServer()) }
     }
 
